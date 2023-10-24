@@ -15,7 +15,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 10px; 
             padding: 50px; 
-            text-align: center;
+            /* text-align: center; */
         }
 
         .alumno {
@@ -23,6 +23,28 @@
             background: rgb(236, 237, 216);
             padding: 10px;
         }
+
+.inicio_fin {
+  display: flex; /* Activa el modelo de caja flexible (flexbox) */
+}
+
+.inicio, .fin {
+  flex: 1; /* Hace que las columnas se expandan para llenar el espacio disponible */
+  padding: 10px; /* Agrega relleno para separar los contenidos */
+  
+}
+
+/* Opcional: Estilo para encabezados */
+.inicio h2, .fin h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Opcional: Estilo para párrafos */
+.inicio p, .fin p {
+  margin: 0;
+}
+        
         
     </style>
 </head>
@@ -51,8 +73,8 @@
                         <p>GitHub: <a href="${alumno.github}" target="_blank">${alumno.github}</a></p>
                         <p>LinkedIn: <a href="${alumno.linked}" target="_blank">${alumno.linked}</a></p>
                         <p>Descripción:</p>
-                        <div>
-                        <div>
+                        <div class="inicio_fin">
+                        <div class="inicio">
                         <h2>Inicio</h2>
                         <p>HTML: ${alumno.inicio.html}</p>
                         <p>CSS: ${alumno.inicio.css}</p>
@@ -63,7 +85,7 @@
                         <p>NODE: ${alumno.inicio.node}</p>
                         <p>Express: ${alumno.inicio.express}</p>
                         </div>
-                        <div>
+                        <div class="fin">
                         <h2>Fin</h2>
                         <p>HTML: ${alumno.fin.html}</p>
                         <p>CSS: ${alumno.fin.css}</p>
