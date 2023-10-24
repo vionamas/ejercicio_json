@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="indes.css">
+</head>
+<body>
+    <h1>Ejemplo Alumnos</h1>
+    <div id="alumnosContainer"></div>
+    <img src="" alt="" srcset="">
+    <script>
+        fetch("alumnos.json")
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error(response.status);
+                }
+            })
+            .then(data => {
+                const alumnos = data.alumnos;
+                const alumnosContainer = document.getElementById("alumnosContainer");
+                alumnos.forEach(alumno => {
+                    const alumnoDiv = document.createElement("div");
+                    alumnoDiv.classList.add("alumno");
+                    alumnoDiv.innerHTML = `
+                        <h2>${alumno.Nombre}</h2>
+                        <p>Email: ${alumno.email}</p>
+                        <p>GitHub: <a href="${alumno.github}" target="_blank">${alumno.github}</a></p>
+                        <p>LinkedIn: <a href="${alumno.linked}" target="_blank">${alumno.linked}</a></p>
+                        <p>descripcion:<p/>
+                        <p>HTML:${alumno.inicio.html}</p>
+                        <p>CSS:${alumno.inicio.css}</p>
+                        <p>JS:${alumno.inicio.js}</p>
+                        <p>VUE:${alumno.inicio.vue}</p>
+                        <p>SQL:${alumno.inicio.SQL}</p>
+                        <p>API:${alumno.inicio.API}</p>
+                        <p>NODE:${alumno.inicio["node.js"]}</p>
+                        <p>Express:${alumno.inicio.express}</p>
+                    `;
+                    alumnosContainer.appendChild(alumnoDiv);
+                });
+            })
+            .catch(error => {
+                console.error("Error al cargar el archivo JSON:", error);
+            });
+    </script>
+</body>
+</html>
