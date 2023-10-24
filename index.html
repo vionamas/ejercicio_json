@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="indes.css">
+    <style>
+        body {
+            padding: 50px; 
+        }
+
+        .alumnos-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px; 
+            padding: 50px; 
+            text-align: center;
+        }
+
+        .alumno {
+            /* border: 1px solid #ccc; */
+            background: rgb(236, 237, 216);
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Ejemplo Alumnos</h1>
-    <div id="alumnosContainer"></div>
+    <div class="alumnos-container" id="alumnosContainer"></div>
     <img src="" alt="" srcset="">
     <script>
         fetch("alumnos.json")
@@ -30,15 +49,15 @@
                         <p>Email: ${alumno.email}</p>
                         <p>GitHub: <a href="${alumno.github}" target="_blank">${alumno.github}</a></p>
                         <p>LinkedIn: <a href="${alumno.linked}" target="_blank">${alumno.linked}</a></p>
-                        <p>descripcion:<p/>
-                        <p>HTML:${alumno.inicio.html}</p>
-                        <p>CSS:${alumno.inicio.css}</p>
-                        <p>JS:${alumno.inicio.js}</p>
-                        <p>VUE:${alumno.inicio.vue}</p>
-                        <p>SQL:${alumno.inicio.SQL}</p>
-                        <p>API:${alumno.inicio.API}</p>
-                        <p>NODE:${alumno.inicio["node.js"]}</p>
-                        <p>Express:${alumno.inicio.express}</p>
+                        <p>Descripción:</p>
+                        <p>HTML: ${alumno.inicio.html}</p>
+                        <p>CSS: ${alumno.inicio.css}</p>
+                        <p>JS: ${alumno.inicio.js}</p>
+                        <p>VUE: ${alumno.inicio.vue}</p>
+                        <p>SQL: ${alumno.inicio.SQL}</p>
+                        <p>API: ${alumno.inicio.API}</p>
+                        <p>NODE: ${alumno.inicio["node.js"]}</p>
+                        <p>Express: ${alumno.inicio.express}</p>
                     `;
                     alumnosContainer.appendChild(alumnoDiv);
                 });
