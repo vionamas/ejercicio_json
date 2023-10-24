@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="indes.css">
+    <link rel="stylesheet" href="index.html">
     <style>
         body {
             padding: 50px; 
@@ -23,6 +23,7 @@
             background: rgb(236, 237, 216);
             padding: 10px;
         }
+        
     </style>
 </head>
 <body>
@@ -50,14 +51,30 @@
                         <p>GitHub: <a href="${alumno.github}" target="_blank">${alumno.github}</a></p>
                         <p>LinkedIn: <a href="${alumno.linked}" target="_blank">${alumno.linked}</a></p>
                         <p>Descripción:</p>
+                        <div>
+                        <div>
+                        <h2>Inicio</h2>
                         <p>HTML: ${alumno.inicio.html}</p>
                         <p>CSS: ${alumno.inicio.css}</p>
                         <p>JS: ${alumno.inicio.js}</p>
                         <p>VUE: ${alumno.inicio.vue}</p>
                         <p>SQL: ${alumno.inicio.SQL}</p>
                         <p>API: ${alumno.inicio.API}</p>
-                        <p>NODE: ${alumno.inicio["node.js"]}</p>
+                        <p>NODE: ${alumno.inicio.node}</p>
                         <p>Express: ${alumno.inicio.express}</p>
+                        </div>
+                        <div>
+                        <h2>Fin</h2>
+                        <p>HTML: ${alumno.fin.html}</p>
+                        <p>CSS: ${alumno.fin.css}</p>
+                        <p>JS: ${alumno.fin.js}</p>
+                        <p>VUE: ${alumno.fin.vue}</p>
+                        <p>SQL: ${alumno.fin.SQL}</p>
+                        <p>API: ${alumno.fin.API}</p>
+                        <p>NODE: ${alumno.fin["node.js"]}</p>
+                        <p>Express: ${alumno.fin.express}</p>
+                        </div>
+                        </div>
                     `;
                     alumnosContainer.appendChild(alumnoDiv);
                 });
