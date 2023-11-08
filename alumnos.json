@@ -55,24 +55,24 @@
     "imagen" : "",
     "descripcion" : "",
     "inicio" : {
-    "html" : 5,
-    "css" : 5,
-    "JS" : 1,
-    "VUE" : 3,
-    "SQL" : 2,
-    "API" : 2,
-    "node.js" : 0,
-    "express" : 0
-    },
-    "fin" : {
-    "html" : 4,
-    "css" : 4,
+    "html" : 2,
+    "css" : 2,
     "JS" : 0,
     "VUE" : 0,
     "SQL" : 2,
     "API" : 0,
     "node.js" : 0,
     "express" : 0
+    },
+    "fin" : {
+    "html" : 5,
+    "css" : 5,
+    "JS" : 2,
+    "VUE" : 2,
+    "SQL" : 4,
+    "API" : 4,
+    "node.js" : 2,
+    "express" : 2
     
     
     }

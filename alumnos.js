@@ -1,29 +1,62 @@
-fetch('alumnos.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('La solicitud falló');
+// try {
+  fetch("alumnos.json")
+  .then(res => {
+    if (res.ok) {
+      console.log('response.ok ', res.ok);
+      return res.json()
+    } else {
+      throw new Error(res.status);
     }
-    return response.json();
   })
   .then(data => {
-    // Obtén una referencia al elemento <div> con el id "resultado"
-    const resultadoDiv = document.getElementById('resultado');
+    console.log(data)
+    const clase = data;
 
-    // Crea elementos HTML para representar los datos
-    const ul = document.createElement('ul');
-    
-    // Recorre los elementos del objeto JSON y crea elementos <li> para cada uno
-    for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        const li = document.createElement('li');
-        li.textContent = `${key}: ${data[key]}`;
-        ul.appendChild(li);
-      }
+    document.querySelector('#curso').innerHTML =
+      `${clase.curso} ${clase.fecha_inicio} Localidad: ${clase.lugar}`;
+
+    document.querySelector('#tutor').innerHTML =
+      `<h2>Tutor</h2> ${ficha_persona(clase.tutor)}`;
+
+    let talumnos = '';
+    for (const item of clase.alumnos) {
+      talumnos += '<article>';
+      talumnos += ficha_persona(item);
+      talumnos += evolucion(item)
+      talumnos += '</article>';
+
     }
-
-    // Agrega la lista al elemento <div> de resultado
-    resultadoDiv.appendChild(ul);
+    document.querySelector('#alumnos').innerHTML = talumnos;
   })
-  .catch(error => {
-    console.error('Error:', error);
+  .catch(err => {
+    console.error("ERROR: ", err.message)
   });
+
+
+  function ficha_persona(persona) {
+    const ficha = `<div class="alumno">
+      <div class="alumno-info">
+        <ul>
+          <li>Nombre: ${persona.Nombre}</li>
+          <li>Email: ${persona.email}</li>
+          <li>Linked: <a href="${persona.linked}" target="_blank">${persona.linked}</a></li>
+          <li>Github: <a href="${persona.github}" target="_blank">${persona.github}</a></li>
+        </ul>
+      </div>
+      <div class="alumno-evolucion">
+        ${evolucion(persona)}
+      </div>
+    </div>`;
+  
+    return ficha;
+  }
+  
+function evolucion(persona) {
+  let evolucion = '<table><tr><th>Materia</th><th>Inicio</th><th>Fin</th></tr>'
+  for (let i in persona.inicio) {
+    evolucion += `<tr><td>${i}</td><td>${persona.inicio[i]}</td>
+    <td class="${persona.inicio[i] > persona.fin[i] ? 'negativo' : 'positivo'}">${persona.fin[i]}</td></tr>`
+  }
+  evolucion += '</table>'
+  return evolucion
+}
