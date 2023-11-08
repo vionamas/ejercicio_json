@@ -1,33 +1,38 @@
-Este es un archivo de lectura de ejemplo para una aplicación que obtiene datos de un archivo JSON y lo muestra en una página web.
+#Proyecto Alumnos
+---
+## 📋 Descripción 
+Este proyecto es **un ejemplo de un sitio web que muestra información de alumnos a partir de un archivo JSON**. Cada alumno tiene su propia ficha con detalles personales y un seguimiento de inicio y finalización en diferentes tecnologías.
 
-Empezar
+## ✅ Requisitos Previos 
+Asegúrate de tener instalado lo siguiente en tu sistema:
+**Navegador web para visualizar la aplicación**.
 
-Para ejecutar esta aplicación, siga estos pasos:
+## ⚙️ Instrucciones de Uso 
+1. Descarga o clona este repositorio en local utilizando la consola y el comando git clone.
 
-1. Coloque el repositorio a su máquina local.
-2. Abra el proyecto en su editor de código preferido.
-3. En el directorio del proyecto, abra el archivo .index.html en un navegador web.
+2. Abre el archivo index.html en un navegador web.
 
-- Uso
+3. La página mostrará una lista de alumnos con su información personal y su progreso en diferentes tecnologías.
 
-La aplicación obtiene datos de un archivo JSON llamado "mf0493-202023-10.json" y lo muestra en la página web. Los datos de obtención incluyen información sobre un curso, un tutor y una lista de estudiantes.
+4. Para personalizar la información de los alumnos, puedes modificar el archivo alumnos.json con tus propios datos. Asegúrate de seguir el formato JSON existente.
 
-Información del curso
+## 📁 Estructura del Proyecto
+- index.html: La página principal del sitio web.
 
-La información del curso se muestra en el elemento "curso" en la página web. Incluye el nombre del curso, fecha de inicio y ubicación.
+- alumnos.json: Archivo JSON que contiene la información de los alumnos. Puedes personalizar este archivo con tus propios datos.
 
-Información del tutor
 
-La información del tutor se muestra en el elemento "tutor" en la página web. Incluye el nombre del tutor, el correo electrónico, el enlace de perfil de LinkedIn y el enlace de perfil de GitHub.
+##  ✍  Personalización
+Para personalizar el proyecto:
 
-Información de estudiantes
+1. Modifica el archivo alumnos.json para incluir tus propios datos de alumnos.
 
-La información del estudiante se muestra en el elemento "alumnos" en la página web. Para cada estudiante, se muestran su nombre, correo electrónico, enlace de perfil de LinkedIn y enlace de perfil de GitHub. Además, se muestra una tabla que muestra el progreso del estudiante en diferentes materias. La tabla incluye el nombre del tema, fecha de inicio y fecha de finalización. La celda de la fecha final se destaca con una clase CSS basada en si el progreso es positivo o negativo.
+2. Puedes ajustar el estilo del sitio web editando el archivo CSS en la carpeta styles.
 
-- Contribuir
+## 📝 Notas Adicionales
+Este proyecto utiliza JavaScript para cargar los datos desde el archivo JSON y mostrarlos en la página. Asegúrate de tener una conexión a Internet para cargar los recursos.
 
-Las contribuciones son bienvenidas. Si tiene alguna sugerencia o mejora para esta solicitud, por favor abra un problema o envíe una solicitud de tirón.
+Si deseas realizar cambios más avanzados en el proyecto, puedes explorar la configuración de Netlify para automatizar despliegues.
 
--Licencia
-
-Esta solicitud está licenciada bajo la [Licena del MIT] (LICENSE).
+##Autor
+Sílvia Massana
